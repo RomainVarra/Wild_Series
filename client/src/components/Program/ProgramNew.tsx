@@ -1,16 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
+import type { programType } from "../../lib/types";
 import ProgramForm from "./ProgramForm";
 
-type programType = {
-  id: number;
-  title: string;
-  synopsis: string;
-  poster: string;
-  country: string;
-  year: number;
-  category_id: number;
-};
 function ProgramNew() {
   const navigate = useNavigate();
 

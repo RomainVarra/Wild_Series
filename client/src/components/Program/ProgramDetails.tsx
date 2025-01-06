@@ -13,7 +13,7 @@ type ProgramType = {
 
 function ProgramDetails() {
   const { id } = useParams();
-  const [program, setProgram] = useState(null as null | ProgramType);
+  const [program, setProgram] = useState<ProgramType | null>(null);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/programs/${id}`)

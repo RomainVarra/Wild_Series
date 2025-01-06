@@ -16,7 +16,8 @@
   align-items: center;
   text-align: center;
   width: 250px;
-  border: 2px solid #ffcc00;
+  border: 2px solid;
+  border-color: #ffcc00;
   border-radius: 20px;
   margin: 1em 2em 2em 2em;
   padding: 1em 1em;
@@ -53,6 +54,62 @@
 
 .yearSerie {
   margin-bottom: 1em;
+}
+
+.buttonAddProgram {
+  background-color: beige;
+  border: 2px solid;
+  border-color: #ffcc00;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: gray;
+}
+.buttonAddProgram:hover {
+  color: black;
+}
+
+.programForm {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: beige;
+  border: 3px solid;
+  border-color: #ffcc00;
+  border-radius: 20px;
+}
+.programForm label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.programForm input,
+.programForm textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.formButton {
+  display: inline-block;
+  background-color: rgb(7, 175, 7);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.formButton:hover {
+  background-color: rgb(184, 224, 184);
 }
 
 @media (min-width: 992px) {

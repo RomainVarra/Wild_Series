@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import style from "../components/Program/program.module.css";
 import type { programType } from "../lib/types";
 
@@ -12,6 +13,9 @@ function Programs() {
   }, []);
   return (
     <>
+      <button type="button" className={style.buttonAddProgram}>
+        <Link to={"/programs/new"}>Ajouter votre programme</Link>
+      </button>
       <div className={style.programContainer}>
         {program.map((p) => (
           <section key={p.id} className={style.cardSerie}>

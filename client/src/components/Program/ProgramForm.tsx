@@ -1,13 +1,6 @@
 import type { ReactNode } from "react";
-
-type ProgramData = {
-  title: string;
-  synopsis: string;
-  poster: string;
-  country: string;
-  year: number;
-  category_id: number;
-};
+import type { ProgramData } from "../../lib/types";
+import style from "./program.module.css";
 
 interface ProgramFormProps {
   children: ReactNode;
@@ -34,72 +27,65 @@ function ProgramForm({ children, defaultValue, onSubmit }: ProgramFormProps) {
         onSubmit(programData);
       }}
     >
-      <div>
-        <label>
-          Title:
-          <input
-            type="text"
-            name="title"
-            defaultValue={defaultValue.title}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Synopsis:
-          <textarea
-            name="synopsis"
-            defaultValue={defaultValue.synopsis}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Poster URL:
-          <input
-            type="text"
-            name="poster"
-            defaultValue={defaultValue.poster}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Country:
-          <input
-            type="text"
-            name="country"
-            defaultValue={defaultValue.country}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Year:
-          <input
-            type="number"
-            name="year"
-            defaultValue={defaultValue.year}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Category ID:
-          <input
-            type="number"
-            name="category_id"
-            defaultValue={defaultValue.category_id}
-            required
-          />
-        </label>
-      </div>
-      <button type="submit">{children}</button>
+      <section className={style.programForm}>
+        <div>
+          <label>
+            Titre :
+            <input
+              type="text"
+              name="title"
+              defaultValue={defaultValue.title}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Synopsis :
+            <textarea
+              name="synopsis"
+              defaultValue={defaultValue.synopsis}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Poster :
+            <input
+              type="text"
+              name="poster"
+              defaultValue={defaultValue.poster}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Pays d'origine :
+            <input
+              type="text"
+              name="country"
+              defaultValue={defaultValue.country}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Année de sortie :
+            <input
+              type="number"
+              name="year"
+              defaultValue={defaultValue.year}
+              required
+            />
+          </label>
+        </div>
+        <button className={style.formButton} type="submit">
+          {children}
+        </button>
+      </section>
     </form>
   );
 }
