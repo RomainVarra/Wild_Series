@@ -18,8 +18,12 @@ import programActions from "./modules/item/program/programActions";
 import sayActions from "./modules/item/say/sayActions";
 
 router.get("/", sayActions.sayWelcome);
+
 router.get("/api/programs", programActions.browse);
 router.get("/api/programs/:id", programActions.read);
+router.put("/api/programs/:id", programActions.edit);
+router.post("/api/programs", programActions.add);
+router.delete("/api/programs/:id", programActions.destroy);
 
 router.get("/api/categories", categoryActions.browse);
 router.get("/api/categories/:id", categoryActions.read);

@@ -11,6 +11,7 @@ import CategoryDetail from "./components/Category/CategoryDetail";
 import CategoryEdit from "./components/Category/CategoryEdit";
 import CategoryNew from "./components/Category/CategoryNew";
 import ProgramNew from "./components/Program/ProgramNew";
+import ProgramEdit from "./components/ProgramEdit";
 import Category from "./pages/Category";
 import Homepage from "./pages/Homepage";
 import Programs from "./pages/Programs";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/programs/new",
         element: <ProgramNew />,
+      },
+      {
+        path: "/programs/:id",
+        element: <ProgramEdit />,
       },
       {
         path: "/categories",

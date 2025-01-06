@@ -5,6 +5,7 @@ import type { programType } from "../lib/types";
 
 function Programs() {
   const [program, setProgram] = useState<programType[]>([]);
+
   useEffect(() => {
     fetch("http://localhost:3310/api/programs")
       .then((response) => response.json())
@@ -28,6 +29,9 @@ function Programs() {
             <p className={style.storySerie}>{p.synopsis}</p>
             <p className={style.originSerie}> Pays d'origine : {p.country}</p>
             <p className={style.yearSerie}>Année de production : {p.year}</p>
+            <button type="button">
+              <Link to={`/programs/${p.id}`}>Modifier</Link>
+            </button>
           </section>
         ))}
       </div>

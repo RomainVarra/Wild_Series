@@ -82,6 +82,16 @@ function ProgramForm({ children, defaultValue, onSubmit }: ProgramFormProps) {
             />
           </label>
         </div>
+        <div>
+          <label>
+            Catégorie :
+            <input
+              type="number"
+              name="category_id"
+              defaultValue={defaultValue.category_id}
+            />
+          </label>
+        </div>
         <button className={style.formButton} type="submit">
           {children}
         </button>

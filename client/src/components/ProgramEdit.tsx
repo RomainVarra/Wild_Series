@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ProgramDeleteForm from "./Program/ProgramDeleteForm";
 import ProgramForm from "./Program/ProgramForm";
 type Program = {
   id: number;
@@ -26,24 +27,30 @@ function ProgramEdit() {
 
   return (
     program && (
-      <ProgramForm
-        defaultValue={program}
-        onSubmit={(programData) => {
-          fetch(`${import.meta.env.VITE_API_URL}/api/programs/${program.id}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(programData),
-          }).then((response) => {
-            if (response.status === 204) {
-              navigate(`/programs/${program.id}`);
-            }
-          });
-        }}
-      >
-        Modifier le programme
-      </ProgramForm>
+      <>
+        <ProgramForm
+          defaultValue={program}
+          onSubmit={(programData) => {
+            fetch(
+              `${import.meta.env.VITE_API_URL}/api/programs/${program.id}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(programData),
+              },
+            ).then((response) => {
+              if (response.status === 204) {
+                navigate(`/programs/${program.id}`);
+              }
+            });
+          }}
+        >
+          Modifier le programme
+        </ProgramForm>
+        <ProgramDeleteForm id={program.id}>Supprimer</ProgramDeleteForm>
+      </>
     )
   );
 }

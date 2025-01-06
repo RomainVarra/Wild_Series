@@ -20,7 +20,7 @@ const read: RequestHandler = async (req, res, next) => {
   }
 };
 
-const editProgram: RequestHandler = async (req, res, next) => {
+const edit: RequestHandler = async (req, res, next) => {
   try {
     const program = {
       id: Number(req.params.id),
@@ -80,4 +80,4 @@ const destroy: RequestHandler = async (req, res, next) => {
 };
 // Export it to import it somewhere else
 
-export default { browse, read, editProgram, add, destroy };
+export default { browse, read, edit, add, destroy };
