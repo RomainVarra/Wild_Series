@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import ProgramForm from "../components/ProgramForm";
+import ProgramForm from "./ProgramForm";
 
 type programType = {
   id: number;
