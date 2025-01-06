@@ -22,6 +22,13 @@ router.get("/api/programs", programActions.browse);
 router.get("/api/programs/:id", programActions.read);
 router.get("/api/categories", categoryActions.browse);
 router.get("/api/categories/:id", categoryActions.read);
+router.put(
+  "api/categories/:id",
+  categoryActions.validate,
+  categoryActions.read,
+);
+router.post("/api/categories", categoryActions.validate, categoryActions.read);
+router.delete("/api/categories/:id", categoryActions.read);
 /* ************************************************************************* */
 
 export default router;
