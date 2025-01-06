@@ -21,6 +21,16 @@ const programs = [
     country: "Allemagne",
     year: 2017,
   },
+  {
+    id: 3,
+    title: "Dark",
+    synopsis:
+      "Quatre familles affolées par la disparition d'un enfant cherchent des réponses et tombent sur un mystère impliquant trois générations qui finit de les déstabiliser.",
+    poster:
+      "https://img.betaseries.com/zDxfeFudy3HWjxa6J8QIED9iaVw=/600x900/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffonds%2Fposter%2Fc47135385da176a87d0dd9177c5f6a41.jpg",
+    country: "Allemagne",
+    year: 2017,
+  },
 ];
 
 // Declare the action

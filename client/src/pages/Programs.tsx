@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
-
-type programType = {
-  id: number;
-  title: string;
-  synopsis: string;
-  poster: string;
-  country: string;
-  year: number;
-};
+import style from "../components/Program/program.module.css";
+import type { programType } from "../lib/types";
 
 function Programs() {
   const [program, setProgram] = useState<programType[]>([]);
@@ -19,15 +12,21 @@ function Programs() {
   }, []);
   return (
     <>
-      {program.map((p) => (
-        <section key={p.id}>
-          <h1>{p.title}</h1>
-          <p>{p.synopsis}</p>
-          <p> Pays d'origine : {p.country}</p>
-          <p>Année de production : {p.year}</p>
-          <img src={p.poster} alt={`affiche de la serie ${p.title}`} />
-        </section>
-      ))}
+      <div className={style.programContainer}>
+        {program.map((p) => (
+          <section key={p.id} className={style.cardSerie}>
+            <img
+              src={p.poster}
+              alt={`affiche de la serie ${p.title}`}
+              className={style.imgSerie}
+            />
+            <h2 className={style.titleSerie}>{p.title}</h2>
+            <p className={style.storySerie}>{p.synopsis}</p>
+            <p className={style.originSerie}> Pays d'origine : {p.country}</p>
+            <p className={style.yearSerie}>Année de production : {p.year}</p>
+          </section>
+        ))}
+      </div>
     </>
   );
 }
