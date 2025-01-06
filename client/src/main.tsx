@@ -33,6 +33,10 @@ const router = createBrowserRouter([
         element: <Programs />,
       },
       {
+        path: "/categories",
+        element: <h2>Catégories</h2>,
+      },
+      {
         path: "*",
         element: <h1>Error 404</h1>,
       },

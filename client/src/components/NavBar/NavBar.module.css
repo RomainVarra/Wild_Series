@@ -1,0 +1,41 @@
+.NavBar {
+  margin: 0;
+  padding: 0;
+  background-color: #ffcc00;
+}
+.navBarWS {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 3em;
+  font-size: 2em;
+  margin-left: 1em;
+}
+.logoWS {
+  height: 4em;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.webLink,
+a {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  list-style: none;
+  text-decoration: none;
+  height: 2em;
+  color: #69695b;
+  font-size: 1.2em;
+}
+
+a:hover {
+  color: black;
+}
+
+@media screen and (min-width: 992px) {
+  .webLink {
+    gap: 2em;
+  }
+}
