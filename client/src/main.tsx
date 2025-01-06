@@ -7,6 +7,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import CategoryDetail from "./components/Category/CategoryDetail";
+import CategoryEdit from "./components/Category/CategoryEdit";
+import CategoryNew from "./components/Category/CategoryNew";
+import Category from "./pages/Category";
 import Homepage from "./pages/Homepage";
 import Programs from "./pages/Programs";
 
@@ -34,7 +38,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/categories",
-        element: <h2>Catégories</h2>,
+        element: <Category />,
+      },
+      {
+        path: "/categories/new",
+        element: <CategoryNew />,
+      },
+      {
+        path: "/categories/:id",
+        element: <CategoryDetail />,
+      },
+      {
+        path: "/categories/:id/edit",
+        element: <CategoryEdit />,
       },
       {
         path: "*",
