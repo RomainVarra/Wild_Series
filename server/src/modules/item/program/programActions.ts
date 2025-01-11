@@ -11,12 +11,17 @@ const browse: RequestHandler = async (req, res) => {
 };
 
 const read: RequestHandler = async (req, res, next) => {
-  const programId = Number(req.params.id);
-  const program = await programRepository.read(programId);
-  if (program == null) {
-    res.sendStatus(404);
-  } else {
-    res.json(program);
+  try {
+    const programId = Number(req.params.id);
+    const program = await programRepository.read(programId);
+
+    if (program == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(program);
+    }
+  } catch (err) {
+    next(err);
   }
 };
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import ProgramDeleteForm from "./Program/ProgramDeleteForm";
-import ProgramForm from "./Program/ProgramForm";
+import ProgramDeleteForm from "./ProgramDeleteForm";
+import ProgramForm from "./ProgramForm";
 type Program = {
   id: number;
   title: string;

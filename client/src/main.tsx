@@ -10,8 +10,9 @@ import App from "./App";
 import CategoryDetail from "./components/Category/CategoryDetail";
 import CategoryEdit from "./components/Category/CategoryEdit";
 import CategoryNew from "./components/Category/CategoryNew";
+import ProgramDetails from "./components/Program/ProgramDetails";
+import ProgramEdit from "./components/Program/ProgramEdit";
 import ProgramNew from "./components/Program/ProgramNew";
-import ProgramEdit from "./components/ProgramEdit";
 import Category from "./pages/Category";
 import Homepage from "./pages/Homepage";
 import Programs from "./pages/Programs";
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/programs/:id",
+        element: <ProgramDetails />,
+      },
+      {
+        path: "/programs/:id/edit",
         element: <ProgramEdit />,
       },
       {

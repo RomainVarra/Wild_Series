@@ -17,7 +17,7 @@ class ProgramRepository {
     // Execute the SQL SELECT query to retrieve a specific category by its ID
     const [rows] = await databaseClient.query<Rows>(
       `
-      select * from category where id = ?
+      select * from program where id = ?
       `,
       [id],
     );

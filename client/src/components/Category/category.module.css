@@ -1,0 +1,21 @@
+.newCategory {
+  background-color: beige;
+  border: 2px solid;
+  border-color: #ffcc00;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: gray;
+}
+.listCategory {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  text-decoration: underline;
+  border: 2px solid #ffcc00;
+  border-radius: 20px;
+  background-color: beige;
+  margin: 2em 4em 2em 4em;
+}

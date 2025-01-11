@@ -26,11 +26,9 @@ function Programs() {
               className={style.imgSerie}
             />
             <h2 className={style.titleSerie}>{p.title}</h2>
-            <p className={style.storySerie}>{p.synopsis}</p>
-            <p className={style.originSerie}> Pays d'origine : {p.country}</p>
             <p className={style.yearSerie}>Année de production : {p.year}</p>
             <button type="button">
-              <Link to={`/programs/${p.id}`}>Modifier</Link>
+              <Link to={`/programs/${p.id}`}>Details</Link>
             </button>
           </section>
         ))}

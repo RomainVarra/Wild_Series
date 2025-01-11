@@ -1,34 +1,49 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import type { programType } from "../../lib/types";
+import style from "../Program/program.module.css";
 
-type ProgramType = {
-  id: number;
-  title: string;
-  synopsis: string;
-  poster: string;
-  country: string;
-  year: number;
-  category_id: number;
-};
-
-function ProgramDetails() {
+function ProgramsDetails() {
+  const [program, setProgram] = useState<programType | null>(null);
   const { id } = useParams();
-  const [program, setProgram] = useState<ProgramType | null>(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/programs/${id}`)
+    fetch(`http://localhost:3310/api/programs/${id}`)
       .then((response) => response.json())
-      .then((data: ProgramType) => {
-        setProgram(data);
-      });
+      .then((data) => setProgram(data))
+      .catch((error) => console.error(error));
   }, [id]);
 
+  if (!program) {
+    return <p>Chargement des détails du programme...</p>;
+  }
   return (
     <>
-      <h2>{program?.title}</h2>
-      <img src={program?.poster} alt={`Poster de ${program?.title}`} />
+      <button type="button" className={style.buttonAddProgram}>
+        <Link to="/programs/new">Ajouter votre programme</Link>
+      </button>
+      <div className={style.programContainer}>
+        <section className={style.cardSerie}>
+          <img
+            src={program.poster}
+            alt={`affiche de la serie ${program.title}`}
+            className={style.imgSerie}
+          />
+          <h2 className={style.titleSerie}>{program.title}</h2>
+          <p className={style.storySerie}>{program.synopsis}</p>
+          <p className={style.originSerie}>
+            Pays d'origine : {program.country}
+          </p>
+          <p className={style.yearSerie}>
+            Année de production : {program.year}
+          </p>
+          <button type="button">
+            <Link to={`/programs/${program.id}/edit`}>Modifier</Link>
+          </button>
+        </section>
+      </div>
     </>
   );
 }
 
-export default ProgramDetails;
+export default ProgramsDetails;
