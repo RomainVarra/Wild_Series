@@ -11,6 +11,7 @@
 .listCategory {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1em;
   text-decoration: underline;

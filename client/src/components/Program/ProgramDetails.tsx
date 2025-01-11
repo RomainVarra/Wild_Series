@@ -23,7 +23,7 @@ function ProgramsDetails() {
         <Link to="/programs/new">Ajouter votre programme</Link>
       </button>
       <div className={style.programContainer}>
-        <section className={style.cardSerie}>
+        <section className={style.cardSerieDetails}>
           <img
             src={program.poster}
             alt={`affiche de la serie ${program.title}`}

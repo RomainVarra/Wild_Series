@@ -22,6 +22,19 @@
   margin: 1em 2em 2em 2em;
   padding: 1em 1em;
 }
+.cardSerieDetails {
+  background-color: beige;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  border: 2px solid;
+  border-color: #ffcc00;
+  border-radius: 20px;
+}
 
 .cardSerie:hover {
   transform: scale(1.05);
