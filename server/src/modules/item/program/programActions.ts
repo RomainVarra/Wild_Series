@@ -1,5 +1,24 @@
+import joi from "joi";
 import programRepository from "./programRepository";
 
+const programSchema = joi.object({
+  title: joi.string().required(),
+  synopsis: joi.string().required(),
+  poster: joi.string().uri().required(),
+  country: joi.string().required(),
+  year: joi.number().required(),
+  category_id: joi.number().required(),
+});
+
+const validate: RequestHandler = (req, res, next) => {
+  const { error } = programSchema.validate(req.body, { abortEarly: false });
+
+  if (error == null) {
+    next();
+  } else {
+    res.status(400).json({ validationErrors: error.details });
+  }
+};
 // Declare the action
 
 import type { RequestHandler } from "express";
@@ -85,4 +104,4 @@ const destroy: RequestHandler = async (req, res, next) => {
 };
 // Export it to import it somewhere else
 
-export default { browse, read, edit, add, destroy };
+export default { browse, read, edit, add, destroy, validate };

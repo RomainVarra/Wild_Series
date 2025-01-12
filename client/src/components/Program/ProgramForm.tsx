@@ -2,11 +2,11 @@ import type { ReactNode } from "react";
 import type { ProgramData } from "../../lib/types";
 import style from "./program.module.css";
 
-interface ProgramFormProps {
+type ProgramFormProps = {
   children: ReactNode;
   defaultValue: ProgramData;
   onSubmit: (program: ProgramData) => void;
-}
+};
 
 function ProgramForm({ children, defaultValue, onSubmit }: ProgramFormProps) {
   return (
@@ -88,6 +88,7 @@ function ProgramForm({ children, defaultValue, onSubmit }: ProgramFormProps) {
             <input
               type="number"
               name="category_id"
+              required
               defaultValue={defaultValue.category_id}
             />
           </label>
