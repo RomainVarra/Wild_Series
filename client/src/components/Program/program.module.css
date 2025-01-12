@@ -79,8 +79,17 @@
   text-align: center;
   color: gray;
 }
+.serieButton {
+  border-color: #ffcc00;
+  border-radius: 5px;
+  background-color: beige;
+}
 .buttonAddProgram:hover {
   color: black;
+}
+
+.serieButton:hover {
+  color: #ffcc00;
 }
 
 .programForm {

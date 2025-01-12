@@ -27,7 +27,7 @@ function Programs() {
             />
             <h2 className={style.titleSerie}>{p.title}</h2>
             <p className={style.yearSerie}>Année de production : {p.year}</p>
-            <button type="button">
+            <button type="button" className={style.serieButton}>
               <Link to={`/programs/${p.id}`}>Details</Link>
             </button>
           </section>
